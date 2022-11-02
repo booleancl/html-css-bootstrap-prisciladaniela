@@ -95,5 +95,59 @@ Las etiquetas para hacer titulos son etiquetas **h** con numeros del 1 al 6. Eje
         <li>Javascrips</li>
     </ul>
 
+## div
+el div es para separar y 
+
+## span
+la etiqueta spam se puede usar dentro de un texto.
+
+``` html
+<div>
+  <p>Hola<span>mundo</span></p>
+  </div>
+  ```
+
+  la idea detras de los elemntos no semanticos es utilizar CSS para darles estilo.
+
+  Mas adelante, en este modulo veremos lo frecuente de su uso con el marco de trabajo o framwork Bootstrap.
+
+  ##Formularios
+contiene controles interactivos para ingresar información
+  
+  ```html
+  <form actio="/seach" method="get">
+  ...
+  </form>
+  ```
+
+Cuando enviamos el formulario medianto el metodo `get`los parametros ingresados quedan reflejados en la url despues del signo `?` y separados por `&`.
+
+## CSS
+
+Hojas de estilo en cascada(Cascade Style Sheets)CSS nos permite entregar al sitio al aspecto que queremos. Lo hace aplicando reglas de estilo sobre los diferentes elementos del HTML
+
+Los navegadores tienen estuilos predefinidos para mostrar las diferentes etiquetas.
+
+Cuando el codigo CSS esta definido dentro deel mismo archivo html,se denomina css-inline, pero no es la mejor forma de definir los estilos que se van a utilizar en  varias paginas. Para eso es mejor utilizar un archivo externo y vincularlo al html.
+
+##Sintaxis CSS
+
+Las reglas CSS parten con un selector, luego dentro de las llaves se ingresan las propiedades junto con su valor,
+Ejemplo:
+
+```css
+h2
+  color:blue;
+  font-size: 24px;
 
 
+### Selectores 
+
+En el ejemplo anterior el selector era la misma etiqueta es decir, la regla de estilo aplica a ***todas*** las etiquetas de ese tipo.Tenemos otros 2 selectores muy frecuentes. El selector por `id` y por `clase`
+
+El `id` es un atributo de las etiquetas HTML. Toda etiqueta HTML puede tener el atributo `id` para diferenciarlo del resto. Y podemos usar ese atributo como selector css usando la anotacion `#`
+
+```css
+#fname[
+  border-radius: 6px
+]
