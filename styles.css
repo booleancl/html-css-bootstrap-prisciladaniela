@@ -1,18 +1,47 @@
+/* Comment */
 body{
     background-color: lightblue;
-}
-
-h2{
+    font-size: 12px;
+  }
+@media only screen and (max-width: 600px){
+    body{
+      background-color: green
+    }
+    p{
+        display: none;
+    }
+  }
+  h2, h3{
     font-size: 50px;
     color: cadetblue;
     text-align: center;
-}
-
-#submit{
+  }
+  
+  #submit{
     background-color: burlywood;
-}
-
-.form_input{
+  }
+  
+  .form_input{
     border-radius: 6px;
     border-color: blueviolet;
-}
+  }
+  
+  p.centered {
+    text-align: center;
+    color: purple;
+  }
+
+  p{
+    font-size: 1.5rem;
+    padding: 2em;
+  }
+
+  .side-to-side{
+    display: block;
+    border: solid;
+  }
+  
+  .narrow{
+    display: inline;
+    border: solid;
+  }

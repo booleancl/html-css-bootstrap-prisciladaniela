@@ -32,7 +32,6 @@ Entremedio de las etiquetas de apertura y cierre irá el contenido.
 Además vemos la etiqueta de apertura tiene el **atributo** `lang="es"`, lo que le indica al navegador en qué idioma está el contenido del documento.
 
 >**ATENCIÓN**: Solo las etiquetas de apertura pueden tener atributos, Las etiquetas de cierre no.
-
 ### head
 
 A continuación viene etiqueta `head`. Esta etiqueta entrega información al **Navegador** sobre como visualizar el contenido que vendrá en las siguientes secciones. Por ejemplo se indica mediante etiquetas `meta` el set de caracteres que utilizará la página. Ejemplo:
@@ -63,91 +62,212 @@ Algo que es muy muy muy importante notar y que no es tan evidente, es que los do
   </html>
 ``` 
 
-Esto es muy importante de comprender ya que luego manejaremos las etiquetas pensando en su ubicación relativa dentro del árbol. Y pensaremos que las etiquetas son **nodos** que tienen **nodos padre**, **hermanos** y **nodos hijos**
+Esto es muy importante de comprender ya que luego manejaremos las etiquetas pensando en su ubicación relativa dentro del árbol. Y pensaremos que las etiquetas son **nodos** que tienen **nodos padre**, **hermanos** y **nodos hijos**.
 
 ## Etiquetas principales
 
-## Titulos
+### Títulos
 
-Las etiquetas para hacer titulos son etiquetas **h** con numeros del 1 al 6. Ejemplo
+Las etiquetas para hacer títulos son las etiquetas **h** con números del 1 al 6. Ejemplos
 
 ```html
+  <h1>Súper título</h1>
+  <h2>Súper sub título</h2>
+  <h3>Súper sub sub título</h3>
+  <h4>...</h4>
+  <h5>...</h5>
+  <h6>...</h6>
+```
 
+### Links
 
+Los links son el corazón de internet y los crearemos frecuentemente. Se componen de el atributo `href` que indica el destino del link y su contenido, que es lo que se muestra al usuario
+
+```html
+  <a href="headings.html">Títulos</a>
+```
+
+### Imágenes
+
+Las imágenes son una de las etiquetas que no require de cierre ya que la imagen que se despliega se indica mediante el atributo `src` y en caso de que la imagen no esté disponible se despliega el texto indicado en el atributo `alt` conocido como texto alternativo.
 
 
 ### Listas
-### Ordenadas
 
- <ol>
-        <li>Lunes</li>
-        <li>Martes</li>
-        <li>Miercoles</li>
-        <li>Jueves</li>
-        <li>Viernes</li>
-    </ol>
+#### Ordenadas
 
-## No ordenadas
+```html
+  <ol>Dias de la semana
+    <li>Lunes</li>
+    <li>Martes</li>
+    <li>Miércoles</li>
+    <li>Jueves</li>
+    <li>Viernes</li>
+  </ol> 
+```
 
-    <ul>Pilares de la web
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Javascrips</li>
-    </ul>
+#### No ordenadas
 
-## div
-el div es para separar y 
+```html
+  <ul>Pilares de la Web
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+  </ul>
+```
 
-## span
-la etiqueta spam se puede usar dentro de un texto.
+### Tablas
 
-``` html
-<div>
-  <p>Hola<span>mundo</span></p>
-  </div>
+```html
+  <table>
+    <tr>
+      <th>Italiano</th>
+      <th>Chacarero</th>
+    </tr>
+    <tr>
+      <td>Tomate</td>
+      <td>Lechuga</td>
+    </tr>
+    <tr>
+      <td>Palta</td>
+      <td>Porotos</td>
+    </tr>
+    <tr>
+      <td>Mayo</td>
+      <td>Ají</td>
+    </tr>
+  </table>
+```
+
+
+Ejemplo de selector por id 
+```css
+#fname{
+  border-radius: 6px;
+}
+```
+
+CSS es muy flexible y permite combinar selectores, Ej:
+```css
+p.centered{
+  text-align:center;
+  color: purple;
+}
+```
+Si tenemos reglas que se repiten. Ejemplo
+
+```css
+
+h1{
+  text-align: center;
+  color: blue
+}
+
+h2{
+  text-align: center;
+  color: blue
+}
+```
+Podemos refactorizarlo en una sola regla:
+
+```css
+h1, h2{
+  text-align: center;
+  color: blue
+}
+```
+Selector | Ejemplo | Descripcion 
+----|----|----
+#id | .some-id | Selecciona el elemento con `id="some.id"`
+.class | .some-class | Selecciona TODOS los elementos con clase `class="some-class"`
+element.class | p.intro | Selecciona solor los `<p>`con clase `class="intro"`
+element, element | div, p | Selecciona todos los elementos `<div>` y `<p>`
+
+### Modelo de caja 
+
+En esencia cada elemento html está inserto dentro de una caja que consiste de: Margen, Borde, Padding y contenido.
+
+### Unidades de medida
+
+En general, no solo en desarrollo, podemos clasificar las unidades de medidas en dos grupos:
+
+- Unidades Absolutas: pixel(px) 
+- Unidades Relativas: porcentaje(%), rem, em, vh, vw
+
+### rem
+Es una unidad de medida relativa al font-size del elemento raíz
+
+### em
+Es relativa al font-size del mismo elemento 
+
+### vh
+Es relativo al 1% del alto de la pantalla(viewport)
+
+### vw
+Es relativo al 1% del ancho de la pantalla o viewport
+
+## Tipos de diseño
+
+- El diseño estatico: Sirve para un solo tamaño de pantalla
+- El diseño fluido: Se basa en porcentajes(%) dependiendo del tamaño de la pantalla.
+- El diseño responsivo: Tiene puntos de quiebre (distintos tamaños) para aplicar diferentes estilos 
+
+### CSS MediaQueries
+
+Utiliza la regla `@media` para incluir un bloque de propiedades CSS solo si la condicion es verdadera. Ejemplo:
+
+```
+/* si el tamaño de la pantalla es de 600px o menor, el color de fondo del body sera verde*/
+@media only screen and (max-width: 600px){
+  body{
+    background-color: green
+  }
+}
+
+Existen ciertos tamaños de pantalla mas o menos estandarizados y estas serian sus respectivas media queries:
+
+```css
+
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...} 
+
+```
+
+### Display 
+
+@media only screen and (max-width: 600px){
+    body{
+      background-color: green
+    }
+    p{
+        display: none;
+    }
+  }
   ```
+El valor de la propiedad display modifica como el navegador posicionara la caja del elemento.
 
-  la idea detras de los elemntos no semanticos es utilizar CSS para darles estilo.
+La caja puede ser de lado a lado, en ese caso la propiedad display tendrá el valor `block`.
+Tambien podemos establecer el valor como `inline` y en ese caso, la caja sera del menor tamaño posible. Ejemplo:
 
-  Mas adelante, en este modulo veremos lo frecuente de su uso con el marco de trabajo o framwork Bootstrap.
-
-  ##Formularios
-contiene controles interactivos para ingresar información
+```css
+.side-to-side{
+    display: block;
+    border: solid;
+  }
   
-  ```html
-  <form actio="/seach" method="get">
-  ...
-  </form>
-  ```
-
-Cuando enviamos el formulario medianto el metodo `get`los parametros ingresados quedan reflejados en la url despues del signo `?` y separados por `&`.
-
-## CSS
-
-Hojas de estilo en cascada(Cascade Style Sheets)CSS nos permite entregar al sitio al aspecto que queremos. Lo hace aplicando reglas de estilo sobre los diferentes elementos del HTML
-
-Los navegadores tienen estuilos predefinidos para mostrar las diferentes etiquetas.
-
-Cuando el codigo CSS esta definido dentro deel mismo archivo html,se denomina css-inline, pero no es la mejor forma de definir los estilos que se van a utilizar en  varias paginas. Para eso es mejor utilizar un archivo externo y vincularlo al html.
-
-##Sintaxis CSS
-
-Las reglas CSS parten con un selector, luego dentro de las llaves se ingresan las propiedades junto con su valor,
-Ejemplo:
-
-```css
-h2
-  color:blue;
-  font-size: 24px;
-
-
-### Selectores 
-
-En el ejemplo anterior el selector era la misma etiqueta es decir, la regla de estilo aplica a ***todas*** las etiquetas de ese tipo.Tenemos otros 2 selectores muy frecuentes. El selector por `id` y por `clase`
-
-El `id` es un atributo de las etiquetas HTML. Toda etiqueta HTML puede tener el atributo `id` para diferenciarlo del resto. Y podemos usar ese atributo como selector css usando la anotacion `#`
-
-```css
-#fname[
-  border-radius: 6px
-]
+  .narrow{
+    display: inline;
+    border: solid;
+  }
