@@ -271,3 +271,19 @@ Tambien podemos establecer el valor como `inline` y en ese caso, la caja sera de
     display: inline;
     border: solid;
   }
+```
+
+
+Los marcos de trabajo CSS traen hecho el css responsivo listo para ser utilizado. En genral se utilizara mediante clases css.El framework define una seria de clases y utilidades que han sido diseñadas y probadas para cumplir con los requisitos de un diseño moderno y usable.
+
+Uno de los mas famoso es Bootstrap. Un marco de trabajo de codigo libre utilizado en millones de sitios y apps.
+
+### Bootstrap
+
+Bootstrap basa su enfoque en dividir el espacio disponible en una grilla de filas y columnas. Mediante las clases `row` y `col
+
+Bootstrap es un  framework orientado al desarrollo mobile, es decir, su principal preocupacion son los dispositivos pequeños. Se llama a si mismo un framework "Mobile Firsl"`
+
+
+### Contenedores 
+
